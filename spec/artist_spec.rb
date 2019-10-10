@@ -15,22 +15,23 @@ describe "Artist" do
         expect(adele.name).to eq("Adele")
       end
     end
-
-    describe "#songs" do
-      it "has many songs" do
-        expect(adele.songs).to be_a(Array)
-        hello = Song.new("Hello")
-        hello.artist = adele
-        expect(adele.songs).to eq([hello])
-      end
-    end
-
+   
     describe "#add_song" do
       it "takes in an argument of a song and associates that song with the artist by telling the song that it belongs to that artist" do
         hello = Song.new("Hello")
         adele.add_song(hello)
         expect(adele.songs).to include(hello)
         expect(hello.artist).to eq(adele)
+      end
+    end
+
+    describe "#songs" do
+      it "has many songs" do
+        expect(adele.songs).to be_a(Array)
+        hello = Song.new("Hello")
+        #hello.artist = adele
+        adele.add_song(hello)
+        expect(adele.songs).to eq([hello])
       end
     end
 
