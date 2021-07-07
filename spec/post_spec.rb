@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 describe 'Post' do
   let!(:post) { Post.new('My Blog Post!') }
   let!(:post2) { Post.new('My Newest Blog Post!') }
@@ -55,5 +56,5 @@ describe 'Post' do
       expect(post.author_name).to eq nil
     end
   end
-  # binding.pry
+   #binding.pry
 end
